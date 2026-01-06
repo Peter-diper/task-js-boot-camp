@@ -9,6 +9,12 @@
   text-decoration: none;
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 :root {
   --color-secondary-900: rgb(17, 24, 39);
   --color-secondary-800: rgb(31, 41, 55);
@@ -82,29 +88,30 @@ html {
   padding: 2.3rem 2rem;
   width: 100%;
   max-width: 60.8rem;
-  font-size: 4.2rem;
+  font-size: clamp(1.9rem, 3vw, 3rem);
   border-radius: 28px;
   border: 0;
   outline: 0;
   background-color: #009baf;
-  transition: 200ms all;
-}
-
-.btn:hover {
-  opacity: 0.7;
-  transform: translate(-0px, -0px) scale(0.9);
+  transition: 100ms all;
+  align-self: center;
 }
 
 .btn:active {
   transform: scale(0.8);
+  opacity: 0.7;
 }
 
 /* main */
 .main {
+  position: relative;
   margin: 0 auto;
   max-width: 95vw;
   min-height: 20vh;
   width: 100%;
+  display: grid;
+  display: flex;
+  flex-direction: column;
   transition: max-width 200ms;
 }
 
@@ -174,9 +181,6 @@ html {
 .hidden {
   display: none;
 }
-.block {
-  display: flex;
-}
 
 /* content--section */
 .content--section {
@@ -184,8 +188,13 @@ html {
   box-shadow: 2px 12px 20px rgba(198, 197, 197, 0.167);
   border: solid 1px var(--color-gray-500);
   border-radius: 10px;
-  transition: all 200ms;
+  transition: all 400ms;
   padding: 5.1rem clamp(1rem, 3vw, 4rem);
+  animation: opacity3 300ms;
+}
+
+.block {
+  opacity: 1;
 }
 
 .transaction--title {
@@ -204,9 +213,6 @@ html {
   width: 100%;
   border-radius: 12px;
 }
-.transaction--table :last-child {
-  border-radius: 0 0 12px 12px;
-}
 
 tr:has(th) {
   display: flex;
@@ -214,7 +220,6 @@ tr:has(th) {
   width: 100%;
   gap: 1rem;
   justify-content: space-between;
-  border-radius: 12px;
   border-radius: 12px 12px 0 0;
 }
 tr th {
@@ -231,6 +236,11 @@ tr:has(td) {
   border: solid 1px var(--color-gray-500);
   justify-content: space-between;
 }
+
+tr:has(td):last-child {
+  border-radius: 0 0 15px 15px;
+}
+
 tr td {
   padding: 1.5rem 0;
   text-align: center;
@@ -238,4 +248,106 @@ tr td {
   color: var(--color-secondary-500);
   font-weight: 700;
   font-size: clamp(8px, 2vw, 12px);
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.arrow {
+  width: clamp(5px, 2vw, 11px);
+  transition: all 200ms;
+}
+
+.arrow--active {
+  rotate: 180deg;
+}
+
+.opacity--animatin {
+  animation: opacity1 400ms;
+}
+
+.overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  background-color: #c0c3c4;
+  opacity: 0;
+  animation: opacity2 2000ms;
+}
+
+.hidden.overlay {
+  display: none;
+}
+
+.my--image {
+  border-radius: 50%;
+  border: 6px solid white;
+  width: 20rem;
+  transition: 100ms;
+  animation: rotate 1s ease-out;
+}
+
+@media screen and (min-width: 640px) {
+  .my--image {
+    width: 32rem;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    rotate: 0;
+  }
+  50% {
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+
+@keyframes opacity1 {
+  0% {
+    opacity: 1;
+    scale: 1;
+  }
+  50% {
+    scale: 0;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity2 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes opacity3 {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

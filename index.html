@@ -5,24 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>تسک دوره جاوااسکریپت</title>
     <link rel="stylesheet" href="./src/styles/index.css" />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
-
   <body>
     <main class="main">
       <!-- header -->
       <div class="app-header">
         <span>لیست تراکنش ها</span>
-        <div class="search-wrapper">
-          <input placeholder="جستجوی تراکنش" type="text" name="" id="" />
+        <div class="search-wrapper hidden">
+          <input
+            placeholder="جستجوی تراکنش"
+            type="number"
+            name=""
+            id="search"
+          />
           <img src="./src/imgs/Search.svg" alt="" />
         </div>
       </div>
+      <!-- overlay -->
+      <div class="overlay hidden">
+        <img
+          src="./src/imgs/photo_2026-01-03_22-37-14.jpg"
+          class="my--image"
+          alt=""
+        />
+      </div>
+      <button class="btn" id="btn-calc">بارگذاری تراکنش ها</button>
       <!-- content -->
-      <div class="content--section">
+
+      <div class="content--section hidden">
         <h3 class="transaction--title">لیست تراکنش های شما</h3>
         <!-- table -->
-        <table class="transaction--table" id="table"></table>
+        <table class="transaction--table">
+          <tr class="">
+            <th>ردیف</th>
+            <th>نوع تراکنش</th>
+            <th id="priceBtn" aria-selected="false" class="price">
+              <span>مبلغ</span>
+              <div class="arrow" id="price-arrow" aria-selected="false">
+                <img src="./src/imgs/arrow.svg" class="" alt="#" />
+              </div>
+            </th>
+            <th>شماره پیگیری</th>
+            <th class="date">
+              <span>تاریخ تراکنش</span>
+              <div class="arrow" id="date-arrow" aria-selected="false">
+                <img src="./src/imgs/arrow.svg" class="" alt="#" />
+              </div>
+            </th>
+          </tr>
+          <tbody id="table"></tbody>
+        </table>
       </div>
     </main>
     <script src="./src/js/index.js"></script>
