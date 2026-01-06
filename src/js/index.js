@@ -117,16 +117,16 @@ function orderDate() {
       render(url);
       arrow.classList.add("arrow--active");
     }, 200);
+
     tDetail.forEach((node) => {
       node.classList.add("opacity--animatin");
     });
-
-    console.log(orderPriceBtn.ariaSelected);
     return;
   }
-  console.log("true");
+  console.log("first");
   setTimeout(() => {
-    const url = "http://localhost:3000/transactions?_sort=date&_order=desc";
+    const url =
+      "https://task-js-boot-camp.vercel.app/api/transactions=date&_order=desc";
     render(url);
   }, 200);
   arrow.classList.remove("arrow--active");
