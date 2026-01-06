@@ -80,7 +80,7 @@ function orderPrice() {
     arrow.classList.add("arrow--active");
     setTimeout(() => {
       const url =
-        "https://task-js-boot-camp.vercel.app/api/transactions/transactions?_sort=price&_order";
+        "https://task-js-boot-camp.vercel.app/api/transactions?_sort=price&_order";
       render(url);
       arrow.classList.add("arrow--active");
     }, 200);
@@ -94,7 +94,7 @@ function orderPrice() {
   console.log("true");
   setTimeout(() => {
     const url =
-      "https://task-js-boot-camp.vercel.app/api/transactions/transactions?_sort=price&_order=desc";
+      "https://task-js-boot-camp.vercel.app/api/transactions?_sort=price&_order=desc";
     render(url);
   }, 200);
   arrow.classList.remove("arrow--active");
@@ -113,7 +113,7 @@ function orderDate() {
     arrow.classList.add("arrow--active");
     setTimeout(() => {
       const url =
-        "https://task-js-boot-camp.vercel.app/api/transactions/transactions?_sort=date&_order";
+        "https://task-js-boot-camp.vercel.app/api/transactions?_sort=date&_order";
       render(url);
       arrow.classList.add("arrow--active");
     }, 200);
