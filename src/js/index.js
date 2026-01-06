@@ -15,7 +15,8 @@ searchInput.addEventListener("input", search);
 
 // funcotions
 function data() {
-  const url = "https://task-js-boot-camp.vercel.app/api/transactions";
+  const url =
+    "https://task-js-boot-camp-git-main-rasoolfadas-projects.vercel.app/api/transactions";
   render(url);
 }
 
@@ -24,7 +25,7 @@ function finder(data, type) {
 }
 
 function search(e) {
-  const url = `http://localhost:3000/transactions?refId_like=${e.target.value}`;
+  const url = `https://task-js-boot-camp-git-main-rasoolfadas-projects.vercel.app/api/transactions?refId_like=${e.target.value}`;
   render(url);
 }
 
@@ -80,7 +81,7 @@ function orderPrice() {
     arrow.classList.add("arrow--active");
     setTimeout(() => {
       const url =
-        "https://task-js-boot-camp.vercel.app/api/transactions?_sort=price&_order";
+        "https://task-js-boot-camp-git-main-rasoolfadas-projects.vercel.app/api/transactions?_sort=price&_order";
       render(url);
       arrow.classList.add("arrow--active");
     }, 200);
@@ -94,7 +95,7 @@ function orderPrice() {
   console.log("true");
   setTimeout(() => {
     const url =
-      "https://task-js-boot-camp.vercel.app/api/transactions?_sort=price&_order=desc";
+      "https://task-js-boot-camp-git-main-rasoolfadas-projects.vercel.app/api/transactions?_sort=price&_order=desc";
     render(url);
   }, 200);
   arrow.classList.remove("arrow--active");
@@ -113,20 +114,21 @@ function orderDate() {
     arrow.classList.add("arrow--active");
     setTimeout(() => {
       const url =
-        "https://task-js-boot-camp.vercel.app/api/transactions?_sort=date&_order";
+        "https://task-js-boot-camp-git-main-rasoolfadas-projects.vercel.app/api/transactions?_sort=date&_order";
       render(url);
       arrow.classList.add("arrow--active");
     }, 200);
-
     tDetail.forEach((node) => {
       node.classList.add("opacity--animatin");
     });
+
+    console.log(orderPriceBtn.ariaSelected);
     return;
   }
-  console.log("first");
+  console.log("true");
   setTimeout(() => {
     const url =
-      "https://task-js-boot-camp.vercel.app/api/transactions=date&_order=desc";
+      "https://task-js-boot-camp-git-main-rasoolfadas-projects.vercel.app/api/transactions?_sort=date&_order=desc";
     render(url);
   }, 200);
   arrow.classList.remove("arrow--active");
