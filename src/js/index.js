@@ -15,8 +15,7 @@ searchInput.addEventListener("input", search);
 
 // funcotions
 function data() {
-  const url =
-    "https://your-project.vercel.app/api/transactions?_sort=price&_order=desc/transactions";
+  const url = "https://task-js-boot-camp.vercel.app/api/transactions";
   render(url);
 }
 
